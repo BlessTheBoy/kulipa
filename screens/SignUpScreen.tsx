@@ -91,14 +91,15 @@ export default function SignUpScreen(props: SignUpScreenProps) {
 
   const validatePhone = () => {
     let regex = /^(?:\+|0)/;
+    console.log("phone", phone);
 
-    if (email.match(regex)) {
+    if (phone.match(regex)) {
       return true;
     } else {
-      if (email) {
-        setEmailError("Invalid phone number");
+      if (phone) {
+        setPhoneError("Invalid phone number");
       } else {
-        setEmailError("Phone number is required");
+        setPhoneError("Phone number is required");
       }
       return false;
     }
@@ -116,7 +117,7 @@ export default function SignUpScreen(props: SignUpScreenProps) {
     if (password) {
       return true;
     } else {
-      setPasswordError("Password is required");
+      setNameError("Name is required");
       return false;
     }
   };
