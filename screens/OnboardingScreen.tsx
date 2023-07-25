@@ -172,11 +172,15 @@ export default function OnboardingScreen(props: OnboardingScreenProps) {
             paddingHorizontal: 16,
           }}
         >
-          <Pressable style={styles.button}>
+          <Pressable
+            style={styles.button}
+            onPress={() => props.navigation.navigate("Login")}
+          >
             <Text style={styles.buttonText}>Log in</Text>
           </Pressable>
           <Pressable
             style={[styles.button, { backgroundColor: colors.brandBlue }]}
+            onPress={() => props.navigation.navigate("SignUp")}
           >
             <Text style={[styles.buttonText, { color: "white" }]}>
               Create Account
