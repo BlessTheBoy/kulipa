@@ -31,6 +31,8 @@ export default function Input({
   ...props
 }: InputProps) {
   const [showPassword, setShowPassword] = useState(false);
+
+  const [top, setTop] = useState(label ? 58 : 19);
   return (
     <View style={[{ position: "relative" }, style]}>
       {label && (
@@ -70,12 +72,17 @@ export default function Input({
             }
           : {})}
         {...props}
+        onLayout={(event) => {
+          const { x, y, height, width } = event.nativeEvent.layout;
+          setTop(y + height / 2 - 12);
+          console.log(y, height);
+        }}
       />
       {isPassword && (
         <Feather
           style={{
             position: "absolute",
-            bottom: error ? 41 : 18,
+            top: top,
             right: 16,
           }}
           name={showPassword ? "eye" : "eye-off"}
