@@ -91,7 +91,6 @@ export default function SignUpScreen(props: SignUpScreenProps) {
 
   const validatePhone = () => {
     let regex = /^(?:\+|0)/;
-    console.log("phone", phone);
 
     if (phone.match(regex)) {
       return true;
@@ -114,7 +113,7 @@ export default function SignUpScreen(props: SignUpScreenProps) {
     }
   };
   const validateName = () => {
-    if (password) {
+    if (name) {
       return true;
     } else {
       setNameError("Name is required");
