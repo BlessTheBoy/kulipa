@@ -33,10 +33,8 @@ export default function SignUpScreen(props: SignUpScreenProps) {
   const [submissionError, setSubmissionError] = useState("");
 
   const submitForm = async () => {
-    console.log("registering");
     register(email, password, name, phone)
       .then(() => {
-        console.log("registered succesfully");
         props.navigation.navigate("Home");
       })
       .catch((e: AxiosError) => {

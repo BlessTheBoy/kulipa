@@ -75,7 +75,6 @@ export default function Input({
         onLayout={(event) => {
           const { x, y, height, width } = event.nativeEvent.layout;
           setTop(y + height / 2 - 12);
-          console.log(y, height);
         }}
       />
       {isPassword && (

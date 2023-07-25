@@ -31,7 +31,6 @@ export default function LoginScreen(props: LoginScreenProps) {
         props.navigation.navigate("Home");
       })
       .catch((e: AxiosError) => {
-        console.log("login error", e);
         setSubmissionError(
           ((e.response?.data as any).message as string) ?? e.message
         );

@@ -38,7 +38,6 @@ const AuthContext = createContext<authContextValue>({
   setUser: () => {},
   register: (...args) => new Promise((resolve) => resolve()),
   signIn: (...args) => {
-    console.log("initial sign in");
     return new Promise((resolve) => resolve());
   },
   logOut: () => new Promise((resolve) => resolve()),
